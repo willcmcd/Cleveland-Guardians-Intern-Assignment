@@ -16,3 +16,13 @@ mobile and desktop form factors
 Typescript. (Our tech stack is Vue) 
 
 provided as a [PDF](./docs/Software_Engineering_Intern_Assignment.pdf).
+
+# Sources
+### Resources
+- [https://vuejs.org/guide/extras/ways-of-using-vue.html#single-page-application-spa](https://vuejs.org/guide/extras/ways-of-using-vue.html#single-page-application-spa) Definition of SPA
+- [https://vuejs.org/guide/scaling-up/sfc.html](https://vuejs.org/guide/scaling-up/sfc.html) explanation of core Vue Functionality: Single File Components.
+- [https://www.youtube.com/watch?v=5HgPEXO4oX4](https://www.youtube.com/watch?v=5HgPEXO4oX4) example SPA implementation using maximus SPA boilerplate from github.
+
+### Samples
+https://www.mlb.com/gameday/phillies-vs-d-backs/2023/10/21/748538/final/box
+https://www.espn.com/mlb/boxscore/_/gameId/401581103
