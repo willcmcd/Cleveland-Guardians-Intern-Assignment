@@ -26,3 +26,10 @@ provided as a [PDF](./docs/Software_Engineering_Intern_Assignment.pdf).
 ### Samples
 https://www.mlb.com/gameday/phillies-vs-d-backs/2023/10/21/748538/final/box
 https://www.espn.com/mlb/boxscore/_/gameId/401581103
+
+### To Sort:
+https://vuejs.org/guide/introduction.html
+https://vue-community.org/guide/ecosystem/boilerplates.html
+https://github.com/alefesouza/laravel-vue-boilerplate
+https://github.com/zmts/beauty-vuejs-boilerplate
+https://vuejs.org/guide/scaling-up/tooling.html
