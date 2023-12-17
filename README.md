@@ -33,3 +33,9 @@ https://vue-community.org/guide/ecosystem/boilerplates.html
 https://github.com/alefesouza/laravel-vue-boilerplate
 https://github.com/zmts/beauty-vuejs-boilerplate
 https://vuejs.org/guide/scaling-up/tooling.html
+https://www.smashingmagazine.com/2019/02/interactive-weather-dashboard-api-vue-js/
+
+
+# API Testing:
+`https://statsapi.mlb.com/api/v1/teams/`
+`https://statsapi.mlb.com/api/v1/teams/2128`
