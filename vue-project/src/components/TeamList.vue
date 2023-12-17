@@ -22,7 +22,7 @@ export default defineComponent({
   },
   data() {
     return {
-      teams: null
+      teams: [{ id: 0, teamName: '', fileCode: '', venue: { name: ''}, locationName: ''}]
     }
   },
   mounted() {

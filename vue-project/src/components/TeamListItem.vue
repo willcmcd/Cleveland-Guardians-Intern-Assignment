@@ -1,7 +1,12 @@
 <template>
         <div>
             <h1>{{ teamName }}</h1>
-            <img :src="'https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/' + teamAbbrv + '.png'" alt="TeamLogo" width="50px">
+            <router-link :to='"/team/" + teamId '>
+                <img 
+                :src="'https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/' + teamAbbrv + '.png'" 
+                alt="TeamLogo" 
+                width="50px">
+            </router-link>
             <p>The {{ city }} {{ teamName }}'s play at their home field, {{ venue }}</p>
         </div>
 </template>
@@ -13,7 +18,7 @@ import { defineComponent } from "vue";
 export default defineComponent({
     name: 'TeamListItem',
     props: {
-        teamId: String,
+        teamId: Number,
         teamName: String,
         teamAbbrv: String,
         venue: String,
