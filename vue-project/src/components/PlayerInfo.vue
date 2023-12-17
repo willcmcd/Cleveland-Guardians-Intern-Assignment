@@ -2,7 +2,7 @@
     <h3>#{{ jerseyNumber }} {{ name }}, {{ position }}</h3>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue'
 
 export default defineComponent({

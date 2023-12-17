@@ -4,7 +4,7 @@
     <p>{{ $route.params.id }}</p>
     <!-- <p>{{this.teamRoster}}</p> -->
     <ul>
-      <PlayerInfo v-for="player in this.teamRoster" 
+      <PlayerInfo v-for="player in teamRoster" 
         :key="player.person.id"
         :name="player.person.fullName"
         :jerseyNumber="player.jerseyNumber"
@@ -22,6 +22,13 @@ export default defineComponent({
   name: 'TeamSpotlight',
   components: {
     PlayerInfo
+  },
+  data() {
+    return {
+      teamId: '0',
+      teamData: { teamName: String },
+      teamRoster: [ {person: {fullName: String, id: String}, jerseyNumber: Number, position: { name: String } } ]
+    }
   },
   methods: {
     async fetchTeamData() {
@@ -49,12 +56,6 @@ export default defineComponent({
     this.fetchTeamData();
     this.fetchRosterData();
   },
-  data() {
-    return {
-      teamId: '0',
-      teamData: Object,
-      teamRoster: Object
-    }
-  },
+
 })
 </script>
