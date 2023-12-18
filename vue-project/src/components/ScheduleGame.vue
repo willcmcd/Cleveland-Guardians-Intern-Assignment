@@ -1,9 +1,11 @@
 // TODO: implement some sort of decent layout for this.
 <template>
   <div class="ScheduleGameItem">
-    <p>{{ data?.description }} <br> <b>{{ data?.teams.away.team.name }}</b> <i>vs</i> <b>{{ data?.teams.home.team.name }}</b></p>
+    
+    <h3><router-link :to='"/team/" + data?.teams.away.team.id'><b>{{ data?.teams.away.team.name }}</b></router-link> <wbr><i>vs</i> <wbr><router-link :to='"/team/" + data?.teams.home.team.id'><b>{{ data?.teams.home.team.name }}</b></router-link></h3>
+    <p>{{ data?.description }}<br>at {{ data?.venue.name }} </p>
 
-    <h3 style="text-align: left;">METADATA</h3>
+    <h4 style="text-align: left;">METADATA</h4>
     <table>
         <tr>
             <td>gamePk</td>
@@ -27,7 +29,7 @@ export default defineComponent({
         data: {} as () => I_ScheduleGame
     }
 })
-
+// https://statsapi.mlb.com/api/v1/game/748581/boxscore
 </script>
 
 <style scoped>
@@ -37,5 +39,11 @@ export default defineComponent({
 
 table, th, td {
   border: 1px solid black;
+}
+
+/* remove hyperlink styling for team names */
+a {
+    text-decoration: none;
+    color: black;
 }
 </style>
