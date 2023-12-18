@@ -1,5 +1,5 @@
 <template>
-  <div class="games">
+  <div class="games bg-light text-2xl text-bold text-dark">
     <h1>Games Page</h1>
     <ScheduleDateList></ScheduleDateList>
   </div>

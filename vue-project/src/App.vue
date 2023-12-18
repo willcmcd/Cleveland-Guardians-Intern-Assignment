@@ -1,32 +1,11 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/games">Games</router-link> |
-    <router-link to="/teams">Teams</router-link> |
-    <router-link to="/scoreboard">Scoreboard</router-link>
-  </nav>
-  <router-view/>
+  <div class="flex flex-col min-h-screen font-Helvetica bg-light text-dark text-xl text-center">
+    <SiteNavbar/>
+    <router-view/>
+  </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+<script lang='ts' setup>
+import SiteNavbar from './components/SiteNavbar.vue'
+</script>

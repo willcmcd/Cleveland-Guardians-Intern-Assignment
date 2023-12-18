@@ -1,5 +1,12 @@
+<!-- TODO: implement tailwind styling -->
+<!-- TODO: show more information?  -->
+
 <template>
-    <h3>#{{ jerseyNumber }} {{ name }}, {{ position }}</h3>
+
+    <div class="bg-primary text-dark text rounded m-2 p-2">
+        <h2 class="text-2xl">{{ name }}{{ jerseyNumber != 0 ? ", " + jerseyNumber : "" }}</h2>
+        <p>Position: {{ position }}</p>
+    </div>
 </template>
 
 <script lang="ts">

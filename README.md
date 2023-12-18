@@ -28,12 +28,15 @@ https://www.mlb.com/gameday/phillies-vs-d-backs/2023/10/21/748538/final/box
 https://www.espn.com/mlb/boxscore/_/gameId/401581103
 
 ### To Sort:
-https://vuejs.org/guide/introduction.html
-https://vue-community.org/guide/ecosystem/boilerplates.html
-https://github.com/alefesouza/laravel-vue-boilerplate
-https://github.com/zmts/beauty-vuejs-boilerplate
-https://vuejs.org/guide/scaling-up/tooling.html
-https://www.smashingmagazine.com/2019/02/interactive-weather-dashboard-api-vue-js/
+https://vuejs.org/guide/introduction.html // good starting point, but found video resources more helpful.
+https://vue-community.org/guide/ecosystem/boilerplates.html // ended up not using
+https://github.com/alefesouza/laravel-vue-boilerplate // decided not to use
+https://github.com/zmts/beauty-vuejs-boilerplate // decided not to use
+https://vuejs.org/guide/scaling-up/tooling.html // vuejs documentation, not a super useful page
+https://www.smashingmagazine.com/2019/02/interactive-weather-dashboard-api-vue-js/ // Reference, not really used
+https://www.youtube.com/watch?v=TsQVdEekvtE // Tailwind CSS Installation
+https://www.youtube.com/watch?v=1GNsWa_EZdw // MASSIVE HELP
+
 
 
 # API Testing:

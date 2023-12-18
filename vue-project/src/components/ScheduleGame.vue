@@ -1,23 +1,29 @@
-// TODO: implement some sort of decent layout for this.
+<!-- TODO: tailwind colors -->
 <template>
-  <div class="ScheduleGameItem">
+
     
-    <h3><router-link :to='"/team/" + data?.teams.away.team.id'><b>{{ data?.teams.away.team.name }}</b></router-link> <wbr><i>vs</i> <wbr><router-link :to='"/team/" + data?.teams.home.team.id'><b>{{ data?.teams.home.team.name }}</b></router-link></h3>
-    <p>{{ data?.description }}<br>at {{ data?.venue.name }} </p>
+    <div class="relative m-2 p-2 bg-light rounded-md">
+        <!-- persistent information -->
+        <div class="bg-primary">
+            <h3><router-link :to='"/team/" + data!.teams.away.team.id'><b>{{ data?.teams.away.team.name }}</b></router-link> <wbr><i>vs</i> <wbr><router-link :to='"/team/" + data?.teams.home.team.id'><b>{{ data?.teams.home.team.name }}</b></router-link></h3>
+            <p>{{ getGameTime() }}</p>
+            <p>{{ data?.description }} @ {{ data!.venue.name }}</p>
+        </div>
 
-    <h4 style="text-align: left;">METADATA</h4>
-    <table>
-        <tr>
-            <td>gamePk</td>
-            <td>{{ data?.gamePk }}</td>
-        </tr>
-        <tr>
-            <td>gameGuid</td>
-            <td>{{ data?.gameGuid }}</td>
-        </tr>
-    </table>
-
-</div>
+        <!-- TODO: display more information -->
+        <div v-if="dropdown" class="relative bg-primary rounded-b-md">
+            <p>{{ data?.teams.away }}</p>
+            <p>{{ data?.teams.home }}</p>
+            <p>{{ data?.gamePk }}</p>
+            <p>{{ data?.link }}</p>
+        </div>
+    
+        <!-- EXPAND/COLLAPSE BUTTONS -->
+        <div>
+            <button v-if="dropdown === false" @click="toggleDropDown()" class="bg-pop p-2 rounded shadow">EXPAND</button>
+            <button v-if="dropdown === true" @click="toggleDropDown()" class="bg-pop p-2 rounded shadow">COLLAPSE</button>
+        </div>
+    </div>
 </template>
 
 <script lang="ts">
@@ -27,16 +33,29 @@ import { I_ScheduleGame } from '../types/ScheduleTypes'
 export default defineComponent({
     props: {
         data: {} as () => I_ScheduleGame
+    },
+    data() {
+        return {
+            dropdown: false
+        }
+    },
+    methods: {
+        toggleDropDown() {
+            this.dropdown = !this.dropdown;
+        },
+        getGameTime() {
+            if (this.data == null || this.data.officialDate == null) return "ERROR"
+
+            const dateString: string = this.data.officialDate;
+            const dateDate: Date = new Date(dateString);
+
+            return dateDate.toLocaleTimeString("en-US", {hour: '2-digit', minute: '2-digit'});
+        }
     }
 })
-// https://statsapi.mlb.com/api/v1/game/748581/boxscore
 </script>
 
 <style scoped>
-.ScheduleGameItem {
-    background: lightblue !important;
-}
-
 table, th, td {
   border: 1px solid black;
 }

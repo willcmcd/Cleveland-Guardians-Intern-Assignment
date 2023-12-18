@@ -1,7 +1,9 @@
+<!-- TODO: tailwind colors -->
+
 <template>
-    <div class="ScheduleDateList">
-        <h1>SCHEDULE</h1>
-        <ScheduleDate v-for="date in schedule?.dates" :key="date.date" :data="date"></ScheduleDate>
+    <div class="bg-light shadow-lg">
+        <h1 class="text-dark text-4xl text-left">SCHEDULE</h1>
+        <ScheduleDate v-for="date in schedule?.dates" :key="date.date.toString()" :data="date"></ScheduleDate>
     </div>
 </template>
 
@@ -37,11 +39,3 @@ export default defineComponent({
 })
 
 </script>
-
-<style scoped>
-.ScheduleDateList {
-    background-color: cadetblue;
-    padding: 10px;
-}
-
-</style>

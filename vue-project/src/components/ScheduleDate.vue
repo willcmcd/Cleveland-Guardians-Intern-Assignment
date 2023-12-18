@@ -1,7 +1,11 @@
+<!-- TODO: "Cardify" -->
+<!-- TODO: tailwind -->
+
 <template>
-    <div class="ScheduleDate">
-        <h2>{{ data?.date }}</h2>
-        <!-- <p>{{ data.games }}</p> -->
+    <div class="flex flex-col bg-secondary rounded-md mb-2 mx-1">
+        <h2 class="m-3 text-light text-left">{{ data?.date.replace(/-/g, '/') }}</h2>
+        <div class="divide-y divide-solid"></div>
+        <!-- Generate a ScheduleGame Component for each game in the date games array. -->
         <ScheduleGame v-for="game in data?.games" :key="game.gameGuid" :data="game"></ScheduleGame>
     </div>
 </template>
@@ -21,10 +25,3 @@ export default defineComponent({
 })
 
 </script>
-
-<style scoped>
-.ScheduleDate {
-    background-color: antiquewhite;
-    padding: 10px;
-}
-</style>
