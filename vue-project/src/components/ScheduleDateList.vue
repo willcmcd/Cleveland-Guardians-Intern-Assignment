@@ -1,8 +1,7 @@
 <template>
     <div class="ScheduleDateList">
         <h1>SCHEDULE</h1>
-        <!-- <p>{{ schedule }}</p> -->
-        <ScheduleDate v-for="date in schedule.dates" :key="date.date" :data="date"></ScheduleDate>
+        <ScheduleDate v-for="date in schedule?.dates" :key="date.date" :data="date"></ScheduleDate>
     </div>
 </template>
 
@@ -12,6 +11,7 @@
 import { defineComponent } from 'vue';
 import axios from "axios";
 import ScheduleDate from './ScheduleDate.vue';
+import { I_SchedulePostseason } from '../types/ScheduleTypes'
 
 export default defineComponent({
     props: {
@@ -22,7 +22,7 @@ export default defineComponent({
     },
     data() {
         return {
-            schedule: { dates: [ {date: String, totalItems: Number, games: [{}] } ]},
+            schedule: {} as I_SchedulePostseason,
         }
     },
     created() {
