@@ -1,8 +1,8 @@
 <template>
-    <div class="bg-secondary text-light text-left rounded p-2 m-2">
-        <h1 class="text-4xl ">ROSTER</h1>
+    <div class="bg-secondary text-light text-left rounded p-2">
+        <h1 class="text-4xl text-center">ROSTER</h1>
         <PlayerInfo v-for="player in teamRoster.roster" :key="player.person.id" :name="player.person.fullName"
-            :jerseyNumber="player.jerseyNumber" :position="player.position.name"></PlayerInfo>
+            :jerseyNumber="player.jerseyNumber.toString()" :position="player.position.name"></PlayerInfo>
     </div>
 </template>
 
@@ -14,7 +14,10 @@ import axios from "axios";
 
 export default defineComponent({
     props: {
-        teamId: String
+        teamId: {
+            type: String,
+            required: true
+        }
     },
     components: {
         PlayerInfo

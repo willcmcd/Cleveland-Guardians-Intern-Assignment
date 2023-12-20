@@ -1,8 +1,8 @@
 <template>
-  <div class="teamSpotlight">
-    <h1>{{ teamData.teamName }}</h1>
-    <p>{{ $route.params.id }}</p>
-
+  <div class="bg-light text-dark p-2">
+    <h1 class="text-4xl text-left">{{ teamData.teamName }}</h1>
+    <!-- <p>{{ teamData }}</p> -->
+    <TeamSpotlightFastFacts :teamId="teamId"></TeamSpotlightFastFacts>
     <TeamSpotlightRoster :teamId="teamId"></TeamSpotlightRoster>
   </div>
 </template>
@@ -11,18 +11,19 @@
 import { defineComponent } from "vue";
 import axios from "axios";
 
+import TeamSpotlightFastFacts from "@/components/TeamSpotlightFastFacts.vue";
 import TeamSpotlightRoster from "@/components/TeamSpotlightRoster.vue";
 
-export default defineComponent({  
+export default defineComponent({
   name: 'TeamSpotlight',
   components: {
+    TeamSpotlightFastFacts,
     TeamSpotlightRoster
   },
   data() {
     return {
       teamId: '0',
       teamData: { teamName: String },
-      teamRoster: [ {person: {fullName: String, id: String}, jerseyNumber: Number, position: { name: String } } ]
     }
   },
   methods: {
@@ -40,7 +41,6 @@ export default defineComponent({
   created() {
     this.teamId = this.$route.params.id.toString();
     this.fetchTeamData();
-    // this.fetchRosterData();
   },
 
 })
