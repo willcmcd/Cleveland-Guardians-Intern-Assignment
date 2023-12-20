@@ -1,5 +1,3 @@
-<!-- TODO: tailwind colors -->
-
 <template>
     <div class="bg-light shadow-lg">
         <h1 class="text-dark text-4xl text-left">SCHEDULE</h1>

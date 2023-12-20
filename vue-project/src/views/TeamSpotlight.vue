@@ -2,26 +2,21 @@
   <div class="teamSpotlight">
     <h1>{{ teamData.teamName }}</h1>
     <p>{{ $route.params.id }}</p>
-    <!-- <p>{{this.teamRoster}}</p> -->
-    <ul>
-      <PlayerInfo v-for="player in teamRoster" 
-        :key="player.person.id"
-        :name="player.person.fullName"
-        :jerseyNumber="player.jerseyNumber"
-        :position="player.position.name"></PlayerInfo>
-    </ul>
+
+    <TeamSpotlightRoster :teamId="teamId"></TeamSpotlightRoster>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import axios from "axios";
-import PlayerInfo from "@/components/PlayerInfo.vue";
+
+import TeamSpotlightRoster from "@/components/TeamSpotlightRoster.vue";
 
 export default defineComponent({  
   name: 'TeamSpotlight',
   components: {
-    PlayerInfo
+    TeamSpotlightRoster
   },
   data() {
     return {
@@ -40,21 +35,12 @@ export default defineComponent({
       } catch (e) {
         console.error("Error fetching team data.", e);
       }
-    },
-    async fetchRosterData() {
-      try {
-        let uri = "https://statsapi.mlb.com/api/v1/teams/" + this.$route.params.id + "/roster";
-        const response = await axios.get(uri);
-        this.teamRoster = await response.data.roster;
-      } catch (e) {
-        console.error("Error fetching roster data.", e);
-      }
     }
   },
   created() {
     this.teamId = this.$route.params.id.toString();
     this.fetchTeamData();
-    this.fetchRosterData();
+    // this.fetchRosterData();
   },
 
 })

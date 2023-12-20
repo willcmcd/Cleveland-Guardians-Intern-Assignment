@@ -11,7 +11,7 @@ export interface I_TeamRosterPlayer {
 }
 
 export interface I_TeamRoster {
-    players: [
+    roster: [
         I_TeamRosterPlayer
     ]
 }
