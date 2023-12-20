@@ -1,9 +1,15 @@
 <template>
   <div class="bg-light text-dark p-2">
-    <h1 class="text-4xl text-left">{{ teamData.teamName }}</h1>
-    <!-- <p>{{ teamData }}</p> -->
+    <h1 class="text-5xl text-left">{{ teamData.teamName }}</h1>
     <TeamSpotlightFastFacts :teamId="teamId"></TeamSpotlightFastFacts>
-    <TeamSpotlightRoster :teamId="teamId"></TeamSpotlightRoster>
+    <div class="flex flex-row">
+      <div class="w-1/2 m-1 bg-secondary rounded">
+        <TeamSpotlightRoster :teamId="teamId"></TeamSpotlightRoster>
+      </div>
+      <div class="w-1/2 m-1 p-2 bg-secondary text-primary rounded">
+        <p> MORE INFO HERE </p>
+      </div>
+    </div>
   </div>
 </template>
 

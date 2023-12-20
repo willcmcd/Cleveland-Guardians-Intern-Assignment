@@ -1,25 +1,40 @@
 <template>
-    <div class="relative m-2 p-2 bg-secondary rounded">
-        <!-- persistent information -->
-        <div class="text-primary">
-            <h3><router-link :to='"/team/" + data!.teams.away.team.id'><b>{{ data?.teams.away.team.name }}</b></router-link> <wbr><i>vs</i> <wbr><router-link :to='"/team/" + data?.teams.home.team.id'><b>{{ data?.teams.home.team.name }}</b></router-link></h3>
-            <p>{{ getGameTime() }}</p>
-            <p>{{ data?.description }} @ {{ data!.venue.name }}</p>
+    <div class="flex flex-row justify-between m-2 p-2 bg-secondary rounded">
+        <div class="flex-col text-primary p-2">
+            <router-link :to='"/team/" + data!.teams.away.team.id'>
+            <div class="text-light hover:text-pop transition duration-100">
+                <p>{{ data?.teams.away.team.name }}</p>
+            </div>
+            </router-link>
+            <div>
+                <p>vs</p>
+            </div>
+            <router-link :to='"/team/" + data!.teams.home.team.id'>
+            <div class="text-light hover:text-pop transition duration-100">
+                <p>{{ data?.teams.home.team.name }}</p>
+            </div>
+            </router-link>
         </div>
 
-        <!-- TODO: display more information -->
-        <div v-if="dropdown" class="relative bg-primary rounded-b-md">
-            <p>{{ data?.teams.away }}</p>
-            <p>{{ data?.teams.home }}</p>
-            <p>{{ data?.gamePk }}</p>
-            <p>{{ data?.link }}</p>
+        <!-- persistent information -->
+        <div class="flex-col text-primary">
+            <p>{{ getGameTime() }}</p>
+            <p></p>
         </div>
-    
+
         <!-- EXPAND/COLLAPSE BUTTONS -->
         <div>
             <button v-if="dropdown === false" @click="toggleDropDown()" class="bg-pop p-2 rounded shadow">EXPAND</button>
             <button v-if="dropdown === true" @click="toggleDropDown()" class="bg-pop p-2 rounded shadow">COLLAPSE</button>
         </div>
+    </div>
+
+    <!-- TODO: display more information -->
+    <div v-if="dropdown" class="bg-primary rounded-b-md">
+        <p>{{ data?.teams.away }}</p>
+        <p>{{ data?.teams.home }}</p>
+        <p>{{ data?.gamePk }}</p>
+        <p>{{ data?.link }}</p>
     </div>
 </template>
 

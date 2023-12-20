@@ -1,6 +1,6 @@
 <template>
     <router-link :to="'/team/' + teamId ">
-    <div class="bg-primary rounded m-2 p-1 flex flex-row items-center">
+    <div class="bg-primary rounded m-2 p-1 flex flex-row items-center hover:bg-pop transition duration-200">
         <img :src="'https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/scoreboard/' + teamAbbrv + '.png'" 
                 alt="TeamLogo"
                 class="w-16 m-2 overflow-hidden">

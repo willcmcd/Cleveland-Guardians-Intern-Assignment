@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-secondary text-light text-left rounded p-2 my-2">
+    <div class="bg-secondary text-primary text-left rounded p-2 my-2">
         <!-- CONTENT -->
         <!-- <p>{{ teamData }}</p> -->
         <p>The {{ teamData.locationName }} {{ teamData.teamName }} have been playing since {{ teamData.firstYearOfPlay }}.</p>

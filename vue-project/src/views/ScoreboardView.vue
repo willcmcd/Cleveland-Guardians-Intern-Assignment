@@ -1,9 +1,9 @@
 <template>
-  <div class="scoreboard">
-    <h1>MLB Scoreboard</h1>
+  <div class="flex flex-col min-h-screen bg-light text-secondary">
+    <h1 class="text-5xl">MLB Scoreboard</h1>
+    <h1 class="text-5xl text-pop">TODO: wire in to /api/v1/game/gamePk/boxscore</h1>
     <div>
       <h2>Dates</h2>
-      <!-- <input type="date" name="game-date" id="game-date" value="" min="2018-01-01" max="2024-01-01"> -->
     </div>
     <div id="games">
       <h1 style="text-align: left">SELECTED_DATE</h1>
