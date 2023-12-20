@@ -1,10 +1,7 @@
-<!-- TODO: tailwind colors -->
 <template>
-
-    
-    <div class="relative m-2 p-2 bg-light rounded-md">
+    <div class="relative m-2 p-2 bg-secondary rounded">
         <!-- persistent information -->
-        <div class="bg-primary">
+        <div class="text-primary">
             <h3><router-link :to='"/team/" + data!.teams.away.team.id'><b>{{ data?.teams.away.team.name }}</b></router-link> <wbr><i>vs</i> <wbr><router-link :to='"/team/" + data?.teams.home.team.id'><b>{{ data?.teams.home.team.name }}</b></router-link></h3>
             <p>{{ getGameTime() }}</p>
             <p>{{ data?.description }} @ {{ data!.venue.name }}</p>

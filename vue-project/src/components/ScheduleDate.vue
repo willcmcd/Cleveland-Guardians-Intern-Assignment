@@ -2,9 +2,8 @@
 <!-- TODO: tailwind -->
 
 <template>
-    <div class="flex flex-col bg-secondary rounded-md mb-2 mx-1">
-        <h2 class="m-3 text-light text-left">{{ data?.date.replace(/-/g, '/') }}</h2>
-        <div class="divide-y divide-solid"></div>
+    <div class="flex flex-col bg-primary rounded-md mb-2 mx-1">
+        <h2 class="m-3 text-dark text-center">{{ data?.date.replace(/-/g, '/') }}</h2>
         <!-- Generate a ScheduleGame Component for each game in the date games array. -->
         <ScheduleGame v-for="game in data?.games" :key="game.gameGuid" :data="game"></ScheduleGame>
     </div>

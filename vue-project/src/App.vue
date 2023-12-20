@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col min-h-screen font-Helvetica bg-light text-dark text-xl text-center">
+  <div class="flex flex-col min-h-screen font-Helvetica bg-light text-dark text-4xl text-left">
     <SiteNavbar/>
     <router-view/>
   </div>
