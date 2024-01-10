@@ -1,6 +1,8 @@
 # Cleveland-Guardians-Intern-Assignment
 My implementation of assignment for Cleveland Guardians internship opprotunity.
 
+[my notes](./ClevelandGuardiansProjectNotes.pdf)
+
 # Provided Documentation:
 ### Software Engineering Intern Assignment  
 Build an ESPN/MLB like game feed using MLB Data. Feel free to use those sites as inspiration 
