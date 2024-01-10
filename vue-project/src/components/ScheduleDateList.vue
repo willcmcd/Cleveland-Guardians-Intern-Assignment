@@ -31,8 +31,26 @@ export default defineComponent({
     },
     methods: {
         async getSchedule() {
-            const response = await axios.get('https://statsapi.mlb.com/api/v1/schedule/postseason');
+            const response = await axios.get('https://statsapi.mlb.com/api/v1/schedule/postseason', { params: { season: 2023 }});
             this.schedule = response.data;
+
+            // // Identify Sport ID for MLB
+            // // const sports = await axios.get('https://statsapi.mlb.com/api/v1/sports');
+            // // console.log(sports.data);
+            // // Result: sportID: 1
+
+            // // Get most up to date season
+            // const seasons = await axios.get('https://statsapi.mlb.com/api/v1/seasons/all', { params: { sportId: 1, all: true }});
+            // const seasonArr = seasons.data.seasons;
+            // console.log(seasonArr[seasonArr.length - 1]);
+
+            // const currSeason = seasonArr[seasonArr.length - 1].seasonId;
+            
+            // const season = await axios.get('https://statsapi.mlb.com/api/v1/seasons/' + currSeason, { params: { sportId: 1 }});
+            // const seasonData = season.data;
+            // console.log(seasonData);
+
+
             // this.schedule = JSON.parse(CACHED_POSTSEASON); // this doesn't work, It's likely necessary to really fix the issue to get this looking right again.
         }
     }
