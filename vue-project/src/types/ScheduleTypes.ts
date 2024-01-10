@@ -84,8 +84,8 @@ export interface I_ScheduleDate {
     totalEvents: number,
     totalGames: number,
     totalGamesInProgress: number,
-    games: [ I_ScheduleGame ]
-    events: [ I_ScheduleEvent ]
+    games: I_ScheduleGame []
+    events: I_ScheduleEvent []
 }
 
 export interface I_SchedulePostseason {
@@ -95,5 +95,5 @@ export interface I_SchedulePostseason {
     totalGames: number,
     totalGamesInProgress: number,
     wait: number,
-    dates: [ I_ScheduleDate ]
+    dates: I_ScheduleDate []
 }

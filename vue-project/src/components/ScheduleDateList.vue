@@ -8,9 +8,11 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import axios from "axios";
 import ScheduleDate from './ScheduleDate.vue';
-import { I_SchedulePostseason } from '../types/ScheduleTypes'
+import { I_SchedulePostseason } from '../types/ScheduleTypes';
+
+import axios from "axios";
+// import CACHED_POSTSEASON from '../tmp/api_v1_schedule_postseason.json';
 
 export default defineComponent({
     props: {
@@ -31,6 +33,7 @@ export default defineComponent({
         async getSchedule() {
             const response = await axios.get('https://statsapi.mlb.com/api/v1/schedule/postseason');
             this.schedule = response.data;
+            // this.schedule = JSON.parse(CACHED_POSTSEASON); // this doesn't work, It's likely necessary to really fix the issue to get this looking right again.
         }
     }
 })
